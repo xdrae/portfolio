@@ -208,6 +208,12 @@ section::before {
     z-index: 0;
 }
 
+/* Estilo selector de armas */
+.skills-container{
+    width: 500%;
+    height: 350%;
+}
+
 /* Proyectos estilo fichas de caso */
 .projects {
     display: grid;
@@ -385,3 +391,185 @@ strong {
     filter: hue-rotate(90deg) contrast(-155%);
     background-color: #001f1f !important;
 }
+
+/* Rueda de habilidades */
+
+.game-container {
+            width: 600px;
+            height: 500px;
+        }
+
+        .weapon-wheel {
+            position: absolute;
+            margin-top: 5%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: rgba(10, 10, 40, 0.124);
+            border: 2px solid var(--cyan-glow);
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+            display: none;
+            z-index: 10;
+        }
+
+        .weapon-wheel.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* Cambios clave en weapon-option */
+        .weapon-option {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(10, 10, 40, 0.375);
+            border: 2px solid var(--cyan-glow);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 2;
+            /* Posicionamiento absoluto corregido */
+            transform: translate(-50%, -50%);
+            /* Eliminamos margin y ajustamos transform-origin */
+            transform-origin: center center;
+        }
+
+        .weapon-option:hover {
+            
+            transform: translate(-50%, -50%) scale(1.1);
+            
+        }
+
+        .weapon-option.selected {
+            
+            transform: translate(-50%, -50%) scale(1.2);
+            
+        }
+
+        /* Resto de estilos (iguales que antes) */
+        .weapon-option img {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+        }
+
+        .weapon-name {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--batman-primary);
+            font-size: 14px;
+            text-shadow: var(--cyan-glow);
+            opacity: 0;
+            transition: opacity 0.3s;
+            width: 100px;
+            text-align: center;
+            z-index: 1;
+            pointer-events: none;
+            background: rgba(0, 20, 50, 0.7);
+            padding: 3px 5px;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 150, 255, 0.3);
+        }
+
+        .weapon-option:hover .weapon-name {
+            opacity: 1;
+        }
+
+        .center-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            background: rgba(10, 10, 40, 0.375);
+            border-radius: 50%;
+            border: var(--cyan-glow);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .center-info.active {
+            opacity: 1;
+            animation: pulse 2s infinite;
+        }
+
+        .weapon-title {
+            color: var(--batman-primary);
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-shadow: var(--cyan-glow);
+        }
+
+        .weapon-desc {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+
+        .classification {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .classification-star {
+            color: gold;
+            font-size: 14px;
+            margin: 0 2px;
+        }
+
+        .hud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+        }
+
+        .hud-item {
+            background: rgba(0, 20, 50, 0.5);
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 5px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #00a2ff;
+            z-index: 5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(0, 150, 255, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(0, 200, 255, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(0, 150, 255, 0.5); }
+        }

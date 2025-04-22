@@ -40,21 +40,55 @@
         <section id="skills">
             <h2>Habilidades</h2>
             <div class="skills-container">
-                <h3>Tecnologías principales:</h3>
-                <ul>
-                    <li>JavaScript (ES6+) - Nivel: Experto</li>
-                    <li>React.js - Nivel: Avanzado</li>
-                    <li>Node.js - Nivel: Avanzado</li>
-                    <li>Python - Nivel: Intermedio-Avanzado</li>
-                </ul>
-                
-                <h3>Otras habilidades:</h3>
-                <ul>
-                    <li>Análisis de datos y visualización</li>
-                    <li>Desarrollo de algoritmos</li>
-                    <li>Seguridad informática básica</li>
-                    <li>Diseño de interfaces de usuario</li>
-                </ul>
+                <div class="game-container">
+                    <div class="weapon-wheel" id="weaponWheel">
+                        <!-- Opciones de armas -->
+                        <div class="weapon-option" data-weapon="batarang">
+                            <img src="icons/iconsbatman_batarang.png" alt="Batarang">
+                            <span class="weapon-name">Batarang</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="explosive">
+                            <img src="icons/iconsbatman_explosive_gel.png" alt="Gel Explosivo">
+                            <span class="weapon-name">Gel Explosivo</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="grapple">
+                            <img src="icons/iconsbatman_batclaw.png" alt="Gancho">
+                            <span class="weapon-name">Gancho</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="hacker">
+                            <img src="icons/iconsbatman_remote_hacking.png" alt="Hacker">
+                            <span class="weapon-name">Hacker</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="smoke">
+                            <img src="icons/iconsbatman_smoke_pellets.png" alt="Bomba de Humo">
+                            <span class="weapon-name">Humo</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="freeze">
+                            <img src="icons/iconsbatman_freezing_bomb.png" alt="Granada Congelante">
+                            <span class="weapon-name">Congelante</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="remote">
+                            <img src="icons/iconsbatman_remote_batarang.png" alt="Batarang Remoto">
+                            <span class="weapon-name">Batarang Remoto</span>
+                        </div>
+                        <div class="weapon-option" data-weapon="disruptor">
+                            <img src="icons/iconsbatman_disruptor.png" alt="Perturbador">
+                            <span class="weapon-name">Disruptor</span>
+                        </div>
+            
+                        <div class="center-info" id="centerInfo">
+                            <div class="weapon-title" id="weaponTitle"></div>
+                            <div class="weapon-desc" id="weaponDesc"></div>
+                            <div class="classification" id="weaponStars"></div>
+                        </div>
+                    </div>
+                    <br>
+            
+                    <div class="instructions">
+                        Presiona <strong>Tab</strong> para abrir la rueda de armas. Haz clic en un arma para seleccionarla.
+                    </div>
+                </div>
+
             </div>
         </section>
         
