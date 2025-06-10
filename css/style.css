@@ -230,6 +230,11 @@ section::before {
     left: 0;
     opacity: 0.9;
     transition: opacity .2s ease-out;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     
     /* Efecto de líneas de escaneo */
     background-image: 
